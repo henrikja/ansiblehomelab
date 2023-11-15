@@ -2,4 +2,8 @@
   
 - hosts: all
   tasks:
-   ping:
+    - name: Update and upgrade apt packages
+      become: yes
+      apt:
+        update_cache: yes
+        upgrade: yes
