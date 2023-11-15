@@ -3,6 +3,7 @@
 - hosts: all
   tasks:
     - name: Update and upgrade apt packages
-      become: yes
+      become: true
+      become_user: henrik
       apt:
         update_cache: yes
