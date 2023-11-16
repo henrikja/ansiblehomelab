@@ -1,0 +1,7 @@
+---
+- name: Remove K3s on hosts
+  hosts: all
+  become: true
+  tasks:
+     - name: Remove K3s on hosts
+       command: sh /usr/local/bin/k3s-uninstall.sh
