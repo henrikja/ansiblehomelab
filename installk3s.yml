@@ -4,11 +4,11 @@
   become: true
   tasks:
      - name: install K3s on master
-       command: sh curl -sfL https://get.k3s.io | K3S_TOKEN=Ql914i6584 sh -s - server --cluster-init --disable servicelb --disable traefik
+       command: curl -sfL https://get.k3s.io | K3S_TOKEN=Ql914i6584 sh -s - server --cluster-init --disable servicelb --disable traefik
 
 - name: install k3s on second master
   hosts: k3shelpermasters
   become: true
   tasks:
      - name: install K3s on master
-       command: sh  curl -sfL https://get.k3s.io | K3S_TOKEN=Ql914i6584 sh -s - server --server https://192.168.1.119:6443 --disable servicelb --disable traefik
+       command: curl -sfL https://get.k3s.io | K3S_TOKEN=Ql914i6584 sh -s - server --server https://192.168.1.119:6443 --disable servicelb --disable traefik
